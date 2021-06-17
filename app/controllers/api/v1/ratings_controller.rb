@@ -2,7 +2,7 @@ class Api::V1::RatingsController < ApplicationController
   before_action :authenticate, only: [:create, :user_rating]
 
   def user_rating
-    @ratings = Rating.where(user_id: current_user.id, book_id: params[:book_id])
+    @ratings = Rating.where(user_id: current_user.id, book_id: params[:book_id]).includes(:user, :book)
     render json: @ratings
   end
 
