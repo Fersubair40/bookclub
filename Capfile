@@ -7,6 +7,8 @@ require 'capistrano/passenger'
 require 'capistrano/rbenv'
 require 'capistrano/figaro_yml'
 
+set :rbenv_type, :user
+set :rbenv_ruby, '3.0.0' # or whatever version you chose
 # Load the SCM plugin appropriate to your project:
 #
 # require "capistrano/scm/hg"
