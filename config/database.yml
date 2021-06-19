@@ -89,6 +89,8 @@ test:
 #
 production:
   <<: *default
-  database: bookclub_api_production
-  username: bookclub_api
-  password: <%= ENV['BOOKCLUB_API_DATABASE_PASSWORD'] %>
+  database: <%= ENV["PROD_BB"] %>
+  username: <%= ENV["PROD_USERNAME"]  %>
+  password: <%= ENV['PROD_PASSWORD'] %>
+  host: <%= ENV['PROD_HOST'] %>
+  port: <%= ENV['PROD_PORT'] %>
