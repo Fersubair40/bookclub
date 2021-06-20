@@ -27,9 +27,6 @@ class Api::V1::RatingsController < ApplicationController
   def set_rating
     @rating = Rating.find(params[:id])
   end
-  def rating_params
-    params.permit(:book_id)
-  end
   def rate_params
     params.require(:rating).permit(:rating, :book_id)
   end
